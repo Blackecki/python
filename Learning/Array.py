@@ -4,14 +4,17 @@ import tkinter as tk
 array = []
 
 def on_button_click():
-    array.append(textbox.get())
-    if checkbtn_check.get() == 1:
-        array.sort()
-        print("Sorted")
+    if textbox.get() == "":
+        print("Empty")
     else:
-        print("Not sorted")
+        array.append(textbox.get())
+        if checkbtn_check.get() == 1:
+            array.sort()
+            print("Sorted")
+        else:
+            print("Not sorted")
 
-    label.config(text="Array: " + str(array))
+        label.config(text="Array: " + str(array))
 
 # Create the main window
 root = tk.Tk()
