@@ -3,8 +3,11 @@ import tkinter as tk
 # Create array to store the list
 array = []
 
-def on_button_click():
-    if textbox.get() == "":
+def is_empty():
+    return textbox.get() == ""
+
+def on_button_click(event=None):
+    if is_empty():
         print("Empty")
     else:
         array.append(textbox.get())
@@ -15,6 +18,7 @@ def on_button_click():
             print("Not sorted")
 
         label.config(text="Array: " + str(array))
+        textbox.delete(0 ,tk.END) # Clear the textbox
 
 # Create the main window
 root = tk.Tk()
@@ -27,6 +31,8 @@ label.pack()
 # Create a textbox
 textbox = tk.Entry(root)
 textbox.pack(padx=5, pady=5)
+# Bind the Enter key to the on_button_click function
+textbox.bind("<Return>", on_button_click)
 
 # Create a button
 button = tk.Button(root, text="Add and refresh", command=on_button_click)
