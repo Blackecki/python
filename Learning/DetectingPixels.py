@@ -70,9 +70,12 @@ def on_button_click():
             else:
                 max_width = 200
                 max_height = 200
-            
+            checkbox.pack_forget()
+            button.pack_forget()
             detected_count = detect_pixel(file_path, target_color, detecting_img, max_width, max_height)
             label.config(text=f"Processing complete")
+            checkbox.pack()
+            button.pack()
             original_img = Image.open(file_path)
             original_img.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
             normal_img_tk = ImageTk.PhotoImage(original_img)
@@ -97,7 +100,7 @@ labeldetected = tk.Label(root, text="", bg="black", fg="white")
 labeldetected.pack(side=tk.BOTTOM)
 
 precise_mode = tk.BooleanVar() # doesent work now will fix later
-checkbox = tk.Checkbutton(root, text="Precise mode (slower)", variable=precise_mode, bg="black", fg="green")
+checkbox = tk.Checkbutton(root, text="Precise mode (slower) (doesent work)", variable=precise_mode, bg="black", fg="green")
 checkbox.pack(side=tk.BOTTOM)
 
 # Create a button to select the image
