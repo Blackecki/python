@@ -64,8 +64,12 @@ def on_button_click():
             labeldetected.config(text=f"No {target_color} pixels detected")
             
             # Define maximum dimensions for the scaled image
-            max_width = 200
-            max_height = 200
+            if precise_mode == True: # doesent work now will fix later
+                max_width = 500
+                max_height = 500
+            else:
+                max_width = 200
+                max_height = 200
             
             detected_count = detect_pixel(file_path, target_color, detecting_img, max_width, max_height)
             label.config(text=f"Processing complete")
@@ -91,6 +95,10 @@ labelcount.pack(side=tk.BOTTOM)
 
 labeldetected = tk.Label(root, text="", bg="black", fg="white")
 labeldetected.pack(side=tk.BOTTOM)
+
+precise_mode = tk.BooleanVar() # doesent work now will fix later
+checkbox = tk.Checkbutton(root, text="Precise mode (slower)", variable=precise_mode, bg="black", fg="green")
+checkbox.pack(side=tk.BOTTOM)
 
 # Create a button to select the image
 button = tk.Button(root, text="Choose file", command=on_button_click, bg="green", fg="white")
