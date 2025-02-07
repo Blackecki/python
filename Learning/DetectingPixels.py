@@ -45,7 +45,7 @@ def detect_pixel(image_path, target_color, label, max_width, max_height):
                     labeldetected.config(text=f"Detected: {detected_count} pixels")
                     img_copy.putpixel((x, y), (0, 255, 0))  # Mark found pixel with green
                 else:
-                    img_copy.putpixel((x, y), (255, 255, 255))  # Restore original color
+                    img_copy.putpixel((x, y), (255, 0, 0))  # Mark non-matching pixel with red
         return detected_count
 
 # Create the main window
