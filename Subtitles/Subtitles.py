@@ -1,4 +1,5 @@
-#I’m having problems with my OS, and I can’t even import moviepy correctly. I’m fixing it right now and will continue this later.
+#I’m still having problems with my OS, and I can’t even import moviepy correctly. I’m fixing it right now and will continue this later.
+#I just pasted the code from python/learning/CuteLittleUi as my starting point. I will work it up
 import tkinter as tk
 
 def on_button_click():
