@@ -1,3 +1,4 @@
+#I’m having problems with my OS, and I can’t even import moviepy correctly. I’m fixing it right now and will continue this later.
 import tkinter as tk
 
 def on_button_click():
